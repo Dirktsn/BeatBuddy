@@ -1,0 +1,179 @@
+:root {
+    --bg-color: #2C3E50;
+    --primary-color: #FFD700;
+    --accent-color: #FF69B4;
+    --text-color: #FFFFFF;
+    --shadow: 8px 8px 16px #1a252f, -8px -8px 16px #3e5a75;
+    --shadow-inner: inset 4px 4px 8px #1a252f, inset -4px -4px 8px #3e5a75;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.app-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.visualizer-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.pulse {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 50px var(--primary-color);
+    transition: transform 0.1s ease-out;
+}
+
+.pulse.active {
+    transform: scale(1.2);
+    background-color: var(--accent-color);
+    box-shadow: 0 0 80px var(--accent-color);
+}
+
+.bpm-display {
+    margin-bottom: 40px;
+}
+
+#bpm-value {
+    font-size: 5rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.bpm-display small {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-round {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-color);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-round:active {
+    box-shadow: var(--shadow-inner);
+}
+
+.btn-main {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-main:active {
+    transform: scale(0.95);
+    box-shadow: var(--shadow-inner);
+}
+
+.extra-controls {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.section p {
+    margin: 0;
+    font-weight: 700;
+    opacity: 0.6;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-sec {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    background: var(--bg-color);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-sec.active {
+    background: var(--accent-color);
+    box-shadow: var(--shadow-inner);
+    transform: scale(0.95);
+}
+
+.btn-tap {
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-tap:active {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
