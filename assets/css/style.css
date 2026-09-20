@@ -177,3 +177,26 @@ h1 {
     background: var(--primary-color);
     color: var(--bg-color);
 }
+
+.app-container {
+    /* Add padding to the bottom to avoid overlap with system nav bars */
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+}
+
+footer {
+    margin-top: 50px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    font-weight: 500;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
