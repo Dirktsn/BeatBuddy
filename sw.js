@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'kidbeat-v1';
+const CACHE_NAME = 'metronooo-v2';
 const ASSETS = [
     '/',
     '/index.html',

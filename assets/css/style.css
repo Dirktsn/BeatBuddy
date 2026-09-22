@@ -7,6 +7,10 @@
     --shadow-inner: inset 4px 4px 8px #1a252f, inset -4px -4px 8px #3e5a75;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,22 +19,26 @@ body {
     color: var(--text-color);
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    align-items: flex-start;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
     user-select: none;
+    box-sizing: border-box;
 }
 
 .app-container {
     text-align: center;
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 16px 20px calc(24px + env(safe-area-inset-bottom));
+    box-sizing: border-box;
 }
 
 h1 {
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin: 0 0 24px;
     color: var(--primary-color);
 }
 
@@ -178,16 +186,47 @@ h1 {
     color: var(--bg-color);
 }
 
-.app-container {
-    /* Add padding to the bottom to avoid overlap with system nav bars */
-    padding-bottom: calc(40px + env(safe-area-inset-bottom));
-}
-
 footer {
-    margin-top: 50px;
+    margin-top: 24px;
+    padding-bottom: env(safe-area-inset-bottom);
     font-size: 0.8rem;
     opacity: 0.5;
     font-weight: 500;
+}
+
+@media (max-height: 800px) {
+    .visualizer-container {
+        margin-bottom: 24px;
+    }
+
+    .pulse {
+        width: 110px;
+        height: 110px;
+    }
+
+    .bpm-display {
+        margin-bottom: 24px;
+    }
+
+    #bpm-value {
+        font-size: 3.5rem;
+    }
+
+    .btn-main {
+        width: 110px;
+        height: 110px;
+        font-size: 1.2rem;
+    }
+
+    .btn-round {
+        width: 56px;
+        height: 56px;
+    }
+
+    .extra-controls {
+        margin-top: 24px;
+        gap: 16px;
+    }
 }
 
 footer a {
